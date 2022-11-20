@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.11.19-10h50m
+          image: jensdl/frontend:dev.v22.11.20-09h01m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -45,7 +45,7 @@ spec:
   template:
     spec:
       containers:
-        - image: jensdl/frontend:dev.v22.11.19-10h50m
+        - image: jensdl/frontend:dev.v22.11.20-09h01m
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -56,7 +56,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-    - host: prisma.orcraft.net
+    - host: dev.prisma.orcraft.net
       http:
         paths:
           - path: /
@@ -69,4 +69,4 @@ spec:
   template:
     spec:
       containers:
-        - image: jensdl/frontend:dev.v22.11.19-10h50m
+        - image: jensdl/frontend:dev.v22.11.20-09h01m
