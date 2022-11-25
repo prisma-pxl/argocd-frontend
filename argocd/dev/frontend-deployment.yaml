@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.11.24-14h51m
+          image: jensdl/frontend:dev.v22.11.25-14h12m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -45,7 +45,7 @@ spec:
   template:
     spec:
       containers:
-        - image: jensdl/frontend:dev.v22.11.24-14h51m
+        - image: jensdl/frontend:dev.v22.11.25-14h12m
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -69,4 +69,4 @@ spec:
   template:
     spec:
       containers:
-        - image: jensdl/frontend:dev.v22.11.24-14h51m
+        - image: jensdl/frontend:dev.v22.11.25-14h12m
