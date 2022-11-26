@@ -62,3 +62,7 @@ spec:
             name: frontend-prisma-service
             port:
               number: 4200
+  tls:
+  - hosts:
+    - prisma.orcraft.net
+    secretName: prod.prisma-tls

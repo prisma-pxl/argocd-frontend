@@ -66,7 +66,7 @@ spec:
                 name: frontend-prisma-service
                 port:
                   number: 4200
-  template:
-    spec:
-      containers:
-        - image: jensdl/frontend:dev.v22.11.25-14h46m
+  tls:
+  - hosts:
+    - dev.prisma.orcraft.net
+    secretName: dev.prisma-tls
