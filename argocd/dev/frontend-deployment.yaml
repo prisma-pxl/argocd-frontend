@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.11.25-14h46m
+          image: jensdl/frontend:dev.v22.11.26-17h51m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -45,7 +45,7 @@ spec:
   template:
     spec:
       containers:
-        - image: jensdl/frontend:dev.v22.11.25-14h46m
+        - image: jensdl/frontend:dev.v22.11.26-17h51m
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -67,6 +67,10 @@ spec:
                 port:
                   number: 4200
   tls:
-  - hosts:
-    - dev.prisma.orcraft.net
-    secretName: dev.prisma-tls
+    - hosts:
+        - dev.prisma.orcraft.net
+      secretName: dev.prisma-tls
+  template:
+    spec:
+      containers:
+        - image: jensdl/frontend:dev.v22.11.26-17h51m
