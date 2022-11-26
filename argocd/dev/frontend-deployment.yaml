@@ -54,6 +54,7 @@ metadata:
   namespace: dev
   annotations:
     kubernetes.io/ingress.class: "traefik"
+    kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
     - host: dev.prisma.orcraft.net
