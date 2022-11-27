@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,8 +22,7 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.11.26-17h51m
+          image: jensdl/frontend:dev.v22.11.27-07h22m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-
