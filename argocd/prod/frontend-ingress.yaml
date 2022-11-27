@@ -6,6 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "traefik"
     kubernetes.io/ingress.allow-http: "false"
+    traefik.ingress.kubernetes.io/router.middlewares: dev-redirect-https@kubernetescrd
 spec:
   rules:
   - host: prisma.orcraft.net
