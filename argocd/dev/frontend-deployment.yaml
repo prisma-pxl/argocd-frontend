@@ -22,7 +22,15 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.12.08-12h16m
+          image: jensdl/frontend:dev.v22.12.08-13h22m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: smb-devfe
+              mountPath: "/usr/share/nginx/html/assets"
+              readOnly: false
+      volumes:
+        - name: smb-devfe
+          persistentVolumeClaim:
+            claimName: pvc-smb-devfe
