@@ -20,8 +20,8 @@ spec:
     volumeAttributes:
       source: "//10.128.12.8/prodfrontend"
     nodeStageSecretRef:
-      name: smbcreds
-      namespace: default
+      name: smbcreds-prodfe
+      namespace: prod
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
