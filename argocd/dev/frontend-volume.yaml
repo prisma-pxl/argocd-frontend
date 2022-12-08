@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-smb-devfe
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: smb
+  mountOptions:
+    - dir_mode=0777
+    - file_mode=0777
+  csi:
+    driver: smb.csi.k8s.io
+    readOnly: false
+    volumeHandle: test_pv_credentails # make sure it's a unique id in the cluster
+    volumeAttributes:
+      source: "//10.128.12.8/devfrontend"
+    nodeStageSecretRef:
+      name: smbcreds
+      namespace: default
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-smb-devfe
+  namespace: dev
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: pv-smb-devfe
+  storageClassName: smb
