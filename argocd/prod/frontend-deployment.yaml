@@ -25,3 +25,11 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: smb-prodfe
+              mountPath: "/usr/share/nginx/html/assets"
+              readOnly: false
+      volumes:
+        - name: smb-prodfe
+          persistentVolumeClaim:
+            claimName: pvc-smb-prodfe
