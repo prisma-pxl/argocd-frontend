@@ -6,6 +6,8 @@ metadata:
   labels:
     app: prisma
     tier: frontend
+  annotations:
+        linkerd.io/inject: enabled
 spec:
   ports:
     - protocol: TCP
