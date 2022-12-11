@@ -7,8 +7,6 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
     kubernetes.io/ingress.allow-http: "false"
     traefik.ingress.kubernetes.io/router.middlewares: prod-redirect-https@kubernetescrd
-    ingress.kubernetes.io/auth-type: "basic"
-    ingress.kubernetes.io/auth-secret: "basic-auth"
 spec:
   rules:
   - host: prisma.orcraft.net
