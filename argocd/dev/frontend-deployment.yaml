@@ -19,12 +19,10 @@ spec:
       labels:
         app: prisma
         tier: frontend
-      annotations:
-        linkerd.io/inject: enabled
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.12.10-16h17m
+          image: jensdl/frontend:dev.v22.12.12-12h19m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
