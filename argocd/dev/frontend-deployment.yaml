@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: frontend-prisma
-          image: jensdl/frontend:dev.v22.12.16-12h45m
+          image: jensdl/frontend:dev.v22.12.16-15h09m
           imagePullPolicy: Always
           ports:
             - containerPort: 80
